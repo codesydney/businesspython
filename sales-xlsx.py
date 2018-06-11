@@ -1,7 +1,9 @@
+
+# Import pandas
 import pandas as pd
 
+# Convert excel to pandas dataframe
 file = 'sample-sales.xlsx'
-
 xl = pd.ExcelFile(file)
 df = xl.parse('Sheet1')
 
@@ -10,6 +12,7 @@ shoes = set()
 belts = set()
 shirts = set()
 
+# Read each line from pandas dataframe and add items to sets
 for index, row in df.iterrows():
         customer = (row[0],row[1])
         category = row[3]
